@@ -11,8 +11,7 @@ class StudentsController < ApplicationController
 
   def edit
     @student = Student.find_by(params[:id])
-    @student = Student.create(params.require(:student).permit(:first_name, :last_name))
-    redirect_to student_path(@student)
+
   end
 
   def new

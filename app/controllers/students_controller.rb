@@ -1,12 +1,13 @@
 class StudentsController < ApplicationController
 
+  def show
+    @student = Student.find_by(params[:id])
+  end
   def new
     @student = Student.new
   end
 
-  def show
-    @student = Student.find_by(params[:id])
-  end
+
 
   def create
     @student = Student.create(params.require(:student).permit(:first_name, :last_name))
